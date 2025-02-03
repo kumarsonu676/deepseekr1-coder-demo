@@ -44,6 +44,9 @@ if user_input:
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": user_input})
 
+    with st.chat_message("user"):
+        st.markdown(user_input)  # Display user input immediately
+
     # Stream response
     with st.chat_message("assistant"):
         response_placeholder = st.empty()  # Placeholder for streaming
